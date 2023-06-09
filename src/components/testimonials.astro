@@ -118,8 +118,9 @@ import "swiper/css/bundle";
 </ContentSection>
 <style>
   .swiper {
-    width: 800px;
-    height: 300px;
+    max-width: 800px;
+    width: 100%;
+    height: auto;
   }
   .testimonial__item {
     text-align: center;
@@ -129,7 +130,12 @@ import "swiper/css/bundle";
     justify-content: center;
     align-items: center;
     color: white;
-    padding: 30px 60px;
+    padding: 15px;
+  }
+  @media screen and (min-width: 768px) {
+    .testimonial__item {
+      padding: 30px 60px;
+    }
   }
 </style>
 <script>
