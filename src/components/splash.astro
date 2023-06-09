@@ -4,11 +4,12 @@ import { Icon } from "astro-icon";
 import astronautImage from "~/assets/astronaut.png";
 import HeroImage from "~/components/hero-image.astro";
 import Starfield from "~/components/starfield.astro";
-import logo from "~/assets/jdk-logo-alt.png";
+// import logo from "~/assets/jdk-logo-alt.png";
+import heroImage from "~/assets/hero-dev.svg";
 
 const widths = [450, 800];
 const sizes = "(min-width: 640px) 42vw, 67vw";
-const logoSrc = logo.src;
+// const logoSrc = logo.src;
 ---
 
 <section class="relative h-full bg-black">
@@ -20,14 +21,15 @@ const logoSrc = logo.src;
     <h2
       class="flex flex-col gap-2 self-end sm:gap-4 sm:self-auto sm:justify-self-end"
     >
-      <img
+      <!-- <img
         class="w-1/2 max-w-xs self-end sm:w-10/12 sm:self-auto sm:justify-self-end"
         src={logoSrc}
         alt="JDK Portfolio Showcase Logo"
-      />
+      /> -->
       <div
         class="gradient-text text-center font-extrabold tracking-tighter text-8xl"
       >
+        Dev <br />
         Showcase
       </div>
     </h2>
@@ -37,7 +39,7 @@ const logoSrc = logo.src;
     >
       <Picture
         class="h-full w-full object-cover"
-        src={astronautImage}
+        src={heroImage}
         widths={widths}
         sizes={sizes}
         loading="eager"
