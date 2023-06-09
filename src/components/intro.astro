@@ -1,10 +1,17 @@
 ---
 import { Icon } from "astro-icon";
 import ContentSection from "~/components/content-section.astro";
+import logo from "~/assets/jdk-logo-alt.png";
 ---
 
-<ContentSection title="Just ship less" id="intro">
-  <Icon slot="eyebrow" name="logomark" class="h-32" />
+<ContentSection title="" id="intro">
+  <!-- <Icon slot="eyebrow" name="logomark" class="h-32" /> -->
+  <img
+    slot="eyebrow"
+    class="w-1/2 max-w-xs self-end sm:w-10/12 sm:self-auto sm:justify-self-end"
+    src={logo.src}
+    alt="JDK Portfolio Showcase Logo"
+  />
   <Fragment slot="lead">
     Welcome to our Portfolio, where
     <span class="text-primary">innovation</span> and
