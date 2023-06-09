@@ -10,7 +10,7 @@ import Testimonials from "~/components/testimonials.astro";
 import "~/styles/index.css";
 
 const { generator, site } = Astro;
-const image = new URL("social.jpg", site);
+const image = new URL("jdk-logo-alt.png", site);
 const description =
   "Check out our company portfolio and see what we can do for you!";
 ---
@@ -27,7 +27,7 @@ const description =
     <meta name="description" content={description} />
 
     <!-- social media -->
-    <meta property="og:title" content="Astro" />
+    <meta property="og:title" content="JDK Showcase" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
