@@ -1,7 +1,60 @@
 ---
 import ContentSection from "~/components/content-section.astro";
+// import Swiper bundle with all modules installed
+
+// import styles bundle
+import "swiper/css/bundle";
 ---
 
 <ContentSection title="Testimonials" id="testimonials">
   <h2>Testimonials Section</h2>
+  <!-- Slider main container -->
+  <div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
 </ContentSection>
+<style>
+  .swiper {
+    width: 800px;
+    height: 300px;
+  }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background-color: #090c14;
+    border: 1px solid var(--color-background);
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+  }
+</style>
+<script>
+  import Swiper from "swiper/bundle";
+  // init Swiper:
+  const swiper = new Swiper(".swiper", {
+    autoplay: {
+      delay: 10000,
+    },
+    loop: true,
+    slidesPerView: 3,
+    spaceBetween: 10,
+    centeredSlides: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
