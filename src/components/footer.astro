@@ -2,26 +2,26 @@
 import { Icon } from "astro-icon";
 import HeroImage from "~/components/hero-image.astro";
 import type { FooterLink } from "~/types";
-
+const currentYear = new Date().getFullYear();
 const links: Array<FooterLink> = [
-  {
-    url: "https://www.linkedin.com/company/j-d-outstanding-technologies/",
-    description: "J&D Outstanding Technologies on LinkedIn",
-    icon: "fa-brands:linkedin",
-  },
-  {
-    url: "https://twitter.com/astrodotbuild",
-    description: "Astro on Twitter",
-    icon: "fa-brands:twitter",
-  },
+  // {
+  //   url: "https://www.linkedin.com/company/j-d-outstanding-technologies/",
+  //   description: "J&D Outstanding Technologies on LinkedIn",
+  //   icon: "fa-brands:linkedin",
+  // },
+  // {
+  //   url: "https://twitter.com/astrodotbuild",
+  //   description: "Astro on Twitter",
+  //   icon: "fa-brands:twitter",
+  // },
 ];
 ---
 
-<footer class="relative flex h-64 items-center justify-center">
-  <div class="absolute inset-0 overflow-hidden opacity-40">
+<footer class="relative flex h-64 flex-col items-center justify-center">
+  <!-- <div class="absolute inset-0 overflow-hidden opacity-40">
     <HeroImage />
-  </div>
-  <ul class="relative grid grid-cols-2 gap-4 sm:grid-cols-4">
+  </div> -->
+  <ul class="relative grid grid-cols-1">
     {
       links.map((link) => (
         <li>
@@ -36,4 +36,10 @@ const links: Array<FooterLink> = [
       ))
     }
   </ul>
+  <!-- Footer text -->
+  <div class="relative mt-10 flex flex-col items-center justify-center">
+    <small class="text-white">
+      &copy; {currentYear} JDK Outstanding Technologies. All rights reserved.
+    </small>
+  </div>
 </footer>
