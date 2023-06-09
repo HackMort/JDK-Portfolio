@@ -12,13 +12,106 @@ import "swiper/css/bundle";
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Slides -->
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
-      <div class="swiper-slide">Slide 4</div>
-      <div class="swiper-slide">Slide 5</div>
-      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">
+        <div class="testimonial__item">
+          <p>
+            JDK Company's web development services exceeded my expectations.
+            They transformed our outdated website into a visually stunning and
+            user-friendly platform. Their attention to detail and ability to
+            capture our brand's essence truly impressed me. Thanks to JDK
+            Company, our online presence has improved significantly, and we've
+            seen a noticeable increase in website traffic and conversions.
+          </p>
+          <p><strong>Emily Sanchez, Marketing Manager at XYZ Co.</strong></p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="testimonial__item">
+          <p>
+            I am thrilled with the results of working with JDK Company for our
+            web development needs. They listened attentively to our requirements
+            and delivered a responsive and intuitive website that perfectly
+            represents our business. JDK's team of web developers demonstrated
+            their technical expertise and delivered the project on time and
+            within budget. I highly recommend JDK Company for anyone seeking
+            professional web development services.
+          </p>
+          <p><strong>David Peterson, Small Business Owner</strong></p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="testimonial__item">
+          <p>
+            I can't thank JDK Company enough for their exceptional web
+            development services. From the initial consultation to the final
+            launch, their team provided expert guidance and delivered a website
+            that not only met but exceeded our expectations. They seamlessly
+            integrated complex functionalities, ensuring our website is fast,
+            secure, and optimized for search engines. JDK Company's dedication
+            to excellence and their commitment to client satisfaction make them
+            the go-to choice for web development.
+          </p>
+          <p><strong>Michelle Andrews, E-commerce Entrepreneur</strong></p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="testimonial__item">
+          <p>
+            JDK Company's web development team is truly exceptional. They took
+            our vague ideas and turned them into a stunning reality. Their
+            expertise in UI/UX design and their meticulous attention to detail
+            resulted in a website that perfectly aligns with our brand image.
+            JDK Company's commitment to delivering a seamless user experience is
+            evident in every aspect of our website. We are extremely satisfied
+            with their work and highly recommend them for any web development
+            project.
+          </p>
+          <p>
+            <strong
+              >Michael Thompson, Creative Director at Design Studio Co.</strong
+            >
+          </p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="testimonial__item">
+          <p>
+            Working with JDK Company for our web development needs was a
+            fantastic experience. Their team was highly responsive,
+            professional, and attentive to our specific requirements. They
+            implemented custom features and functionalities that have
+            significantly enhanced the user experience on our website. JDK's web
+            development expertise combined with their excellent communication
+            skills made the entire process smooth and enjoyable. We are thrilled
+            with the results and would gladly collaborate with JDK Company again
+            in the future.
+          </p>
+          <p>
+            <strong
+              >Sarah Mitchell, Marketing Director at Tech Solutions Inc.</strong
+            >
+          </p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="testimonial__item">
+          <p>
+            I am incredibly impressed with JDK Company's web development
+            services. They transformed our outdated and poorly performing
+            website into a modern, visually appealing, and highly functional
+            platform. The JDK team not only improved the website's aesthetics
+            but also optimized its performance, resulting in faster loading
+            times and improved user engagement. Their professionalism, technical
+            proficiency, and dedication to delivering outstanding results make
+            JDK Company an excellent choice for web development.
+          </p>
+          <p><strong>Robert Johnson, Small Business Owner</strong></p>
+        </div>
+      </div>
     </div>
+    <!-- pagination -->
+    <!-- <div class="swiper-pagination"></div> -->
+    <!-- arrows -->
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
   </div>
@@ -28,16 +121,15 @@ import "swiper/css/bundle";
     width: 800px;
     height: 300px;
   }
-  .swiper-slide {
+  .testimonial__item {
     text-align: center;
     font-size: 18px;
-    background-color: #090c14;
-    border: 1px solid var(--color-background);
-    /* Center slide text vertically */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #000;
+    color: white;
+    padding: 30px 60px;
   }
 </style>
 <script>
@@ -48,12 +140,15 @@ import "swiper/css/bundle";
       delay: 10000,
     },
     loop: true,
-    slidesPerView: 3,
-    spaceBetween: 10,
+    slidesPerView: 1,
+    // spaceBetween: 10,
     centeredSlides: true,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
     },
   });
 </script>
