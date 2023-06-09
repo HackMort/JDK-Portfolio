@@ -1,32 +1,32 @@
 [
   {
-    "title": "PoliNations",
-    "image": "./images/polinations.png",
-    "url": "https://polinations.com/"
+    "title": "Strensiq",
+    "image": "./images/strensiq.png",
+    "url": "https://strensiq.jdoutstanding.com/"
   },
   {
-    "title": "Astro Docs",
-    "image": "./images/astro-docs.png",
-    "url": "https://docs.astro.build/"
+    "title": "NMOSD",
+    "image": "./images/nmosd.png",
+    "url": "https://patient.dev-jdoutstanding.com/"
   },
   {
-    "title": "<div>RIOTS",
-    "image": "./images/divriots.png",
-    "url": "https://divriots.com/"
+    "title": "Koselugo",
+    "image": "./images/koselugo.png",
+    "url": "https://koselugo.dev-jdoutstanding.com/"
   },
   {
-    "title": "Designcember",
-    "image": "./images/designcember.png",
-    "url": "https://designcember.com/"
+    "title": "aHUS",
+    "image": "./images/ahus.png",
+    "url": "https://ahus.dev-jdoutstanding.com/"
   },
   {
-    "title": "The Firebase Blog",
-    "image": "./images/firebase-blog.png",
-    "url": "https://firebase.blog/"
+    "title": "Strensiq HCP",
+    "image": "./images/strensiq-hcp.png",
+    "url": "https://strensiq-hcp.dev-jdoutstanding.com/"
   },
   {
-    "title": "Corset",
-    "image": "./images/corset.png",
-    "url": "https://corset.dev/"
+    "title": "HPP",
+    "image": "./images/hpp.png",
+    "url": "https://hpp.dev-jdoutstanding.com/"
   }
 ]
