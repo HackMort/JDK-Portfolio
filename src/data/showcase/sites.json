@@ -2,17 +2,17 @@
   {
     "title": "Strensiq",
     "image": "./images/strensiq.png",
-    "url": "https://strensiq.jdoutstanding.com/"
+    "url": "https://strensiq.com/"
   },
   {
     "title": "NMOSD",
     "image": "./images/nmosd.png",
-    "url": "https://patient.dev-jdoutstanding.com/"
+    "url": "https://nmosd.com/"
   },
   {
     "title": "Koselugo",
     "image": "./images/koselugo.png",
-    "url": "https://koselugo.dev-jdoutstanding.com/"
+    "url": "https://koselugo.com/"
   },
   {
     "title": "aHUS",
@@ -22,11 +22,31 @@
   {
     "title": "Strensiq HCP",
     "image": "./images/strensiq-hcp.png",
-    "url": "https://strensiq-hcp.dev-jdoutstanding.com/"
+    "url": "https://strensiq-hcp.com/"
   },
   {
     "title": "HPP",
     "image": "./images/hpp.png",
-    "url": "https://hpp.dev-jdoutstanding.com/"
+    "url": "https://hppdetective.com/"
+  },
+  {
+    "title": "NMOSD-HCP",
+    "image": "./images/nmosd-hcp.png",
+    "url": "https://nmosd.com/hcp"
+  },
+  {
+    "title": "Koselugo-HCP",
+    "image": "./images/koselugo-hcp.png",
+    "url": "https://koselugohcp.com/"
+  },
+  {
+    "title": "nf1andpninfo",
+    "image": "./images/nf1andpninfo.png",
+    "url": "https://nf1andpninfo.com/"
+  },
+  {
+    "title": "nf1andpninfo-hcp",
+    "image": "./images/nf1andpninfo-hcp.png",
+    "url": "https://nf1andpninfo.com/hcp"
   }
 ]
