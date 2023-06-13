@@ -1,4 +1,8 @@
 ---
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
+import "@fancyapps/ui/dist/carousel/carousel.css";
+import "@fancyapps/ui/dist/carousel/carousel.autoplay.css";
+
 import "@fontsource/inter/variable.css";
 import Contact from "~/components/contact.astro";
 import Footer from "~/components/footer.astro";
@@ -8,6 +12,9 @@ import Showcase from "~/components/showcase.astro";
 import Splash from "~/components/splash.astro";
 import Testimonials from "~/components/testimonials.astro";
 import "~/styles/index.css";
+import Modal from "~/components/Modal/Modal.astro";
+import { getShowcase } from "~/data/showcase";
+const sites = await getShowcase();
 
 const { generator, site } = Astro;
 const image = new URL("jdk-logo-alt.png", site);
@@ -57,6 +64,7 @@ const description =
           }
         });
     </script>
+
     <style is:global>
       [data-theme="light"] .logo {
         filter: invert(1);
@@ -74,6 +82,53 @@ const description =
       <Testimonials />
       <Contact />
     </div>
+    <button class="button button--primary" data-jd-modal-trigger="modal-slider"
+      >Showcase Carousel</button
+    >
+    <Modal id="modal-slider" className="modal-demo">
+      <Fragment>
+        <div class="modal">
+          <div data-jd-modal-header>
+            <h1 class="modal__title" data-jd-modal-title>Showcase</h1>
+            <button data-jd-modal-close>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"
+                ><path
+                  d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"
+                ></path></svg
+              >
+            </button>
+          </div>
+          <div class="modal__text" data-jd-modal-content>
+            <div class="f-carousel" id="myCarousel">
+              {
+                sites.map((site, index) => {
+                  const { title, image } = site;
+                  return (
+                    <div class="f-carousel__slide">
+                      <img
+                        class="carousel__image"
+                        src={image.src}
+                        alt={title}
+                        width="300"
+                        height="200"
+                      />
+                    </div>
+                  );
+                })
+              }
+            </div>
+          </div>
+          <!-- <div class="modal__actions" data-jd-modal-actions>
+            <button class="button" data-jd-modal-close>Close</button>
+          </div> -->
+        </div>
+      </Fragment>
+    </Modal>
     <Footer />
   </body>
 </html>
