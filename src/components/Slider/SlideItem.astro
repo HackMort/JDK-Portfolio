@@ -1,0 +1,16 @@
+---
+type Props = {
+  className?: string;
+  slideNumber: number;
+};
+const { className, slideNumber } = Astro.props;
+---
+
+<div
+  class={`f-carousel__slide ${
+    className ? className : "showcase-carousel-item"
+  }`}
+  data-slide-number={slideNumber}
+>
+  <slot />
+</div>
