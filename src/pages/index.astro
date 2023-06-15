@@ -13,6 +13,8 @@ import Splash from "~/components/splash.astro";
 import Testimonials from "~/components/testimonials.astro";
 import "~/styles/index.css";
 import Modal from "~/components/Modal/Modal.astro";
+import SliderWrapper from "~/components/Slider/SliderWrapper.astro";
+import SlideItem from "~/components/Slider/SlideItem.astro";
 import { getShowcase } from "~/data/showcase";
 const sites = await getShowcase();
 
@@ -64,12 +66,6 @@ const description =
           }
         });
     </script>
-
-    <style is:global>
-      [data-theme="light"] .logo {
-        filter: invert(1);
-      }
-    </style>
   </head>
   <body
     class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
@@ -82,10 +78,7 @@ const description =
       <Testimonials />
       <Contact />
     </div>
-    <button class="button button--primary" data-jd-modal-trigger="modal-slider"
-      >Showcase Carousel</button
-    >
-    <Modal id="modal-slider" className="modal-demo">
+    <Modal id="modal-slider" className="modal-demo modal-slider">
       <Fragment>
         <div class="modal">
           <div data-jd-modal-header>
@@ -104,24 +97,43 @@ const description =
             </button>
           </div>
           <div class="modal__text" data-jd-modal-content>
-            <div class="f-carousel" id="myCarousel">
+            <SliderWrapper id="myCarousel">
               {
-                sites.map((site, index) => {
-                  const { title, image } = site;
+                sites.map((site) => {
+                  const { id, title, image } = site;
                   return (
-                    <div class="f-carousel__slide">
-                      <img
-                        class="carousel__image"
-                        src={image.src}
-                        alt={title}
-                        width="300"
-                        height="200"
-                      />
-                    </div>
+                    <SlideItem slideNumber={id}>
+                      <div class="grid gap-4 md:grid-cols-2">
+                        <div class="showcase__grid_item">
+                          <img
+                            class="carousel__image"
+                            src={image.src}
+                            alt={title}
+                          />
+                        </div>
+                        <div class="showcase__grid_item flex flex-col justify-around">
+                          <h4 class="font-bold uppercase">{title}</h4>
+                          <p class="text-sm">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing
+                            elit. Suscipit consequatur, distinctio minus
+                            recusandae eum dolore natus qui repellat soluta fuga
+                            ullam nesciunt. Accusantium, officiis. Enim est a
+                            veritatis vitae atque.
+                          </p>
+                          <a
+                            href={site.url}
+                            target="_blank"
+                            class="w-32 flex-auto flex-grow-0 rounded-lg bg-indigo-600 p-3 text-center text-white transition duration-300 ease-in-out hover:bg-indigo-700 hover:text-white"
+                          >
+                            Visit Site
+                          </a>
+                        </div>
+                      </div>
+                    </SlideItem>
                   );
                 })
               }
-            </div>
+            </SliderWrapper>
           </div>
           <!-- <div class="modal__actions" data-jd-modal-actions>
             <button class="button" data-jd-modal-close>Close</button>
