@@ -10,3 +10,36 @@ a,
   @apply bg-clip-text text-transparent;
   @apply bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-pink-500;
 }
+
+[data-theme="light"] .logo {
+  filter: invert(1);
+}
+.modal-demo.modal-slider {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 98%;
+}
+.showcase__grid {
+  display: grid;
+
+  grid-template-columns: 1fr;
+}
+.showcase-carousel {
+  height: auto;
+}
+.showcase-carousel-item {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .modal-demo.modal-slider {
+    max-width: 90%;
+  }
+  .showcase__grid {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+  }
+  .showcase-carousel {
+    /* height: 530px; */
+    /* overflow-y: hidden; */
+  }
+}
