@@ -1,0 +1,14 @@
+---
+type Props = {
+  id: string;
+  className?: string;
+};
+const { id, className } = Astro.props;
+---
+
+<div
+  class={`f-carousel ${className ? className : "showcase-carousel"}`}
+  id={id}
+>
+  <slot />
+</div>
