@@ -33,7 +33,7 @@
       "./images/koselugo-4.png",
       "./images/koselugo-5.png"
     ],
-    "url": "https://koselugo.com/"
+    "url": "https://koselugo.dev-jdoutstanding.com/"
   },
   {
     "id": 4,
@@ -86,19 +86,35 @@
   {
     "id": 8,
     "title": "Koselugo-HCP",
-    "images": ["./images/koselugo-hcp.png"],
+    "images": [
+      "./images/koselugo-hcp.png",
+      "./images/koselugo-hcp-2.png",
+      "./images/koselugo-hcp-3.png",
+      "./images/koselugo-hcp-4.png",
+      "./images/koselugo-hcp-5.png"
+    ],
     "url": "https://koselugohcp.com/"
   },
   {
     "id": 9,
     "title": "nf1andpninfo",
-    "images": ["./images/nf1andpninfo.png"],
+    "images": [
+      "./images/nf1andpninfo.png",
+      "./images/nf1andpninfo-2.png",
+      "./images/nf1andpninfo-3.png",
+      "./images/nf1andpninfo-4.png"
+    ],
     "url": "https://nf1andpninfo.com/"
   },
   {
     "id": 10,
     "title": "nf1andpninfo-hcp",
-    "images": ["./images/nf1andpninfo-hcp.png"],
+    "images": [
+      "./images/nf1andpninfo-hcp.png",
+      "./images/nf1andpninfo-hcp-2.png",
+      "./images/nf1andpninfo-hcp-3.png",
+      "./images/nf1andpninfo-hcp-4.png"
+    ],
     "url": "https://nf1andpninfo.com/hcp"
   }
 ]
