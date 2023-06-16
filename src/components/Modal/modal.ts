@@ -87,10 +87,11 @@ function createModal(modalId: string) {
 function initShowCaseCarousel() {
   const container = document.getElementById("myCarousel");
   const options = {
+    adaptiveHeight: true,
+    infinite: true,
     Autoplay: {
       timeout: 3000,
     },
-    infinite: true,
   };
   const mainCarousel = new Carousel(container, options, { Autoplay });
 }
