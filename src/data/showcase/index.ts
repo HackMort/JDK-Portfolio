@@ -13,17 +13,26 @@ let _loadShowcase: Promise<Array<ShowcaseSite>>;
 async function loadShowcase(): Promise<Array<ShowcaseSite>> {
   const sites = await Promise.all(
     sitesData.map(async (site) => {
-      if (!(site.image in allImages)) {
-        console.error(
-          `Image for "${site.title}" not found (provided: "${site.image}")`
-        );
-      }
+      // if (!(site.images in allImages)) {
+      //   console.error(
+      //     `Image for "${site.title}" not found (provided: "${site.image}")`
+      //   );
+      // }
 
-      const image = await allImages[site.image];
+      const images = site.images.map((image) => {
+        if (!(image in allImages)) {
+          console.error(
+            `Image for "${site.title}" not found (provided: "${image}")`
+          );
+        }
+        return allImages[image];
+      });
+
+      // console.log(images);
 
       return {
         ...site,
-        image,
+        images,
       };
     })
   );
