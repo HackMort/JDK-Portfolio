@@ -14,24 +14,63 @@ const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
 
 <a class="group aspect-video cursor-pointer hover:!text-default">
   <figure class="relative h-full w-full overflow-hidden">
-    <Picture
-      class="h-full w-full bg-cover object-cover transition-all duration-300 group-hover:scale-110 group-hover:opacity-20 group-focus:scale-110 group-focus:opacity-20"
-      src={site.image}
-      widths={widths}
-      sizes={sizes}
-      alt={`A screenshot of ${site.url}`}
-    />
-    <figcaption class="absolute inset-0">
+    {
+      site.images.length < 2 ? (
+        <Picture
+          class="h-full w-full object-cover"
+          src={site.images[0]}
+          alt={site.title}
+          sizes={sizes}
+          widths={widths}
+        />
+      ) : (
+        <div class="showcase__swiper">
+          <div class="swiper-wrapper">
+            {site.images.map((image) => (
+              <div class="swiper-slide">
+                <Picture
+                  class="h-full w-full object-cover"
+                  src={image}
+                  alt={site.title}
+                  sizes={sizes}
+                  widths={widths}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      )
+    }
+
+    <figcaption class="absolute inset-0 z-40">
       <div
-        class="flex h-full flex-col items-center justify-center gap-2 opacity-0 transition-all duration-300 group-hover:opacity-100 group-focus:opacity-100"
+        class="flex h-full flex-col items-center justify-center gap-2 opacity-0 opacity-50 transition-all duration-300 group-hover:opacity-100 group-focus:opacity-100"
         data-jd-modal-trigger="modal-slider"
         data-slide={site.id}
       >
-        <h3 class="text-center font-extrabold uppercase text-xl">
+        <h3 class="text-center font-extrabold uppercase opacity-0 text-xl">
           {site.title}
         </h3>
-        <p class="border border-current px-4 py-2">Visit Site</p>
       </div>
     </figcaption>
   </figure>
 </a>
+<script>
+  import Swiper from "swiper/bundle";
+  const swiper = new Swiper(".showcase__swiper", {
+    autoplay: {
+      delay: 3000,
+    },
+    loop: true,
+    slidesPerView: 1,
+    // spaceBetween: 10,
+    // centeredSlides: true,
+    // navigation: {
+    //   nextEl: ".swiper-button-next",
+    //   prevEl: ".swiper-button-prev",
+    // },
+    // pagination: {
+    //   el: ".swiper-pagination",
+    // },
+  });
+</script>
