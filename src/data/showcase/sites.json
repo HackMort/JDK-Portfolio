@@ -2,61 +2,103 @@
   {
     "id": 1,
     "title": "Strensiq",
-    "image": "./images/strensiq.png",
+    "images": [
+      "./images/strensiq.png",
+      "./images/strensiq-2.png",
+      "./images/strensiq-3.png",
+      "./images/strensiq-4.png",
+      "./images/strensiq-5.png"
+    ],
     "url": "https://strensiq.com/"
   },
   {
     "id": 2,
     "title": "NMOSD",
-    "image": "./images/nmosd.png",
+    "images": [
+      "./images/nmosd.png",
+      "./images/nmosd-2.png",
+      "./images/nmosd-3.png",
+      "./images/nmosd-4.png",
+      "./images/nmosd-5.png"
+    ],
     "url": "https://nmosd.com/"
   },
   {
     "id": 3,
     "title": "Koselugo",
-    "image": "./images/koselugo.png",
+    "images": [
+      "./images/koselugo.png",
+      "./images/koselugo-2.png",
+      "./images/koselugo-3.png",
+      "./images/koselugo-4.png",
+      "./images/koselugo-5.png"
+    ],
     "url": "https://koselugo.com/"
   },
   {
     "id": 4,
     "title": "aHUS",
-    "image": "./images/ahus.png",
+    "images": [
+      "./images/ahus.png",
+      "./images/ahus-2.png",
+      "./images/ahus-3.png",
+      "./images/ahus-4.png",
+      "./images/ahus-5.png"
+    ],
     "url": "https://ahus.dev-jdoutstanding.com/"
   },
   {
     "id": 5,
     "title": "Strensiq HCP",
-    "image": "./images/strensiq-hcp.png",
+    "images": [
+      "./images/strensiq-hcp.png",
+      "./images/strensiq-hcp-2.png",
+      "./images/strensiq-hcp-3.png",
+      "./images/strensiq-hcp-4.png",
+      "./images/strensiq-hcp-5.png"
+    ],
     "url": "https://strensiq-hcp.com/"
   },
   {
     "id": 6,
     "title": "HPP",
-    "image": "./images/hpp.png",
+    "images": [
+      "./images/hpp.png",
+      "./images/hpp-2.png",
+      "./images/hpp-3.png",
+      "./images/hpp-4.png",
+      "./images/hpp-5.png"
+    ],
     "url": "https://hppdetective.com/"
   },
   {
     "id": 7,
     "title": "NMOSD-HCP",
-    "image": "./images/nmosd-hcp.png",
+    "images": [
+      "./images/nmosd-hcp.png",
+      "./images/nmosd-hcp-2.png",
+      "./images/nmosd-hcp-3.png",
+      "./images/nmosd-hcp-4.png",
+      "./images/nmosd-hcp-5.png"
+    ],
     "url": "https://nmosd.com/hcp"
   },
   {
     "id": 8,
     "title": "Koselugo-HCP",
-    "image": "./images/koselugo-hcp.png",
+    "images": ["./images/koselugo-hcp.png"],
     "url": "https://koselugohcp.com/"
   },
   {
     "id": 9,
     "title": "nf1andpninfo",
-    "image": "./images/nf1andpninfo.png",
+    "images": ["./images/nf1andpninfo.png"],
     "url": "https://nf1andpninfo.com/"
   },
   {
     "id": 10,
     "title": "nf1andpninfo-hcp",
-    "image": "./images/nf1andpninfo-hcp.png",
+    "images": ["./images/nf1andpninfo-hcp.png"],
     "url": "https://nf1andpninfo.com/hcp"
   }
 ]
