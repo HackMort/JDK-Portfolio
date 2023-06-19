@@ -12,7 +12,7 @@ const widths = [450, 800];
 const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
 ---
 
-<a class="group aspect-video cursor-pointer hover:!text-default">
+<div class="group aspect-video cursor-pointer hover:!text-default">
   <figure class="relative h-full w-full overflow-hidden">
     {
       site.images.length < 2 ? (
@@ -54,7 +54,7 @@ const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
       </div>
     </figcaption>
   </figure>
-</a>
+</div>
 <script>
   import Swiper from "swiper/bundle";
   const swiper = new Swiper(".showcase__swiper", {
