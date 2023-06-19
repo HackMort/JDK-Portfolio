@@ -25,5 +25,6 @@ export interface ShowcaseSite {
   id: number;
   title: string;
   images: Array<ImageMetadata>;
+  description: string;
   url: string;
 }
