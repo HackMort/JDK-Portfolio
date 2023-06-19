@@ -9,7 +9,8 @@
       "./images/strensiq-4.png",
       "./images/strensiq-5.png"
     ],
-    "url": "https://strensiq.com/"
+    "url": "https://strensiq.com/",
+    "description": "STRENSIQ&#174; (asfotase alfa) is used to treat perinatal/infantile- and juvenile-onset hypophosphatasia (HPP)."
   },
   {
     "id": 2,
@@ -21,7 +22,8 @@
       "./images/nmosd-4.png",
       "./images/nmosd-5.png"
     ],
-    "url": "https://nmosd.com/"
+    "url": "https://nmosd.com/",
+    "description": "Learn about neuromyelitis optica spectrum disorder (NMOSD) causes, diagnosis, symptoms, testing, and treatment."
   },
   {
     "id": 3,
@@ -33,7 +35,8 @@
       "./images/koselugo-4.png",
       "./images/koselugo-5.png"
     ],
-    "url": "https://koselugo.dev-jdoutstanding.com/"
+    "url": "https://koselugo.dev-jdoutstanding.com/",
+    "description": "Learn more about KOSELUGO® (selumetinib), the first and only FDA approved treatment for NF1 PN."
   },
   {
     "id": 4,
@@ -45,7 +48,8 @@
       "./images/ahus-4.png",
       "./images/ahus-5.png"
     ],
-    "url": "https://ahus.dev-jdoutstanding.com/"
+    "url": "https://ahus.dev-jdoutstanding.com/",
+    "description": "AHUS Source provides services to people with autoimmune hemolytic anemia (AHUS). AHUS is a rare and life-threatening blood disorder that occurs when the body's immune system attacks its own red blood cells."
   },
   {
     "id": 5,
@@ -57,7 +61,8 @@
       "./images/strensiq-hcp-4.png",
       "./images/strensiq-hcp-5.png"
     ],
-    "url": "https://strensiq-hcp.com/"
+    "url": "https://strensiq-hcp.com/",
+    "description": "STRENSIQ&#174; (asfotase alfa) is used to treat perinatal/infantile- and juvenile-onset hypophosphatasia (HPP)."
   },
   {
     "id": 6,
@@ -69,7 +74,8 @@
       "./images/hpp-4.png",
       "./images/hpp-5.png"
     ],
-    "url": "https://hppdetective.com/"
+    "url": "https://hppdetective.com/",
+    "description": "This website provides information about Hypophosphatasia (HPP). HPP is a rare genetic disorder that affects the way your body uses phosphorus. Phosphorus is important for strong bones and teeth, and for muscle and nerve function. People with HPP have low levels of phosphorus in their blood, which can lead to a variety of problems, including bone pain, fractures, muscle weakness, and problems with breathing and swallowing."
   },
   {
     "id": 7,
@@ -81,7 +87,8 @@
       "./images/nmosd-hcp-4.png",
       "./images/nmosd-hcp-5.png"
     ],
-    "url": "https://nmosd.com/hcp"
+    "url": "https://nmosd.com/hcp",
+    "description": "Learn more about neuromyelitis optica spectrum disorder, the importance of AQP4-IgG antibodies, relapses, terminal complement pathway, and the burden your patients may face."
   },
   {
     "id": 8,
@@ -93,7 +100,8 @@
       "./images/koselugo-hcp-4.png",
       "./images/koselugo-hcp-5.png"
     ],
-    "url": "https://koselugohcp.com/"
+    "url": "https://koselugohcp.com/",
+    "description": "Learn about KOSELUGO® (selumetinib), a treatment for neurofibromatosis type 1 (NF1) and symptomatic, inoperable plexiform neurofibromas (PN) in pediatric patients 2 years of age and older."
   },
   {
     "id": 9,
@@ -104,7 +112,8 @@
       "./images/nf1andpninfo-3.png",
       "./images/nf1andpninfo-4.png"
     ],
-    "url": "https://nf1andpninfo.com/"
+    "url": "https://nf1andpninfo.com/",
+    "description": "Learn more about NF1 with PNs (neurofibromatosis type 1 with plexiform neurofibromas)."
   },
   {
     "id": 10,
@@ -115,6 +124,7 @@
       "./images/nf1andpninfo-hcp-3.png",
       "./images/nf1andpninfo-hcp-4.png"
     ],
-    "url": "https://nf1andpninfo.com/hcp"
+    "url": "https://nf1andpninfo.com/hcp",
+    "description": "Learn more about NF1 with PNs (neurofibromatosis type 1 with plexiform neurofibromas)."
   }
 ]
