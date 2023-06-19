@@ -15,6 +15,7 @@ import "~/styles/index.css";
 import Modal from "~/components/Modal/Modal.astro";
 import SliderWrapper from "~/components/Slider/SliderWrapper.astro";
 import SlideItem from "~/components/Slider/SlideItem.astro";
+import Slide from "~/components/Slider/Slide.astro";
 import { getShowcase } from "~/data/showcase";
 import { Picture } from "@astrojs/image/components";
 const sites = await getShowcase();
@@ -103,22 +104,15 @@ const description =
           <div class="modal__text" data-jd-modal-content>
             <SliderWrapper id="myCarousel">
               {
+                
                 sites.map((site) => {
                   const { id, title, images } = site;
                   return (
-                    <SlideItem slideNumber={id}>
+                    
+                     <SlideItem slideNumber={id}>
                       <div class="grid gap-4 md:grid-cols-2">
                         <div class="showcase__grid_item">
-                          {images &&
-                            images.map((image) => {
-                              return (
-                                <img
-                                  src={image.src}
-                                  alt={title}
-                                  class="rounded-lg"
-                                />
-                              );
-                            })}
+                            <Slide className="slide" slides={images}></Slide>
                         </div>
                         <div class="showcase__grid_item flex flex-col justify-around">
                           <h4 class="font-bold uppercase">{title}</h4>
@@ -138,11 +132,13 @@ const description =
                           </a>
                         </div>
                       </div>
-                    </SlideItem>
+                    </SlideItem> 
                   );
                 })
+
               }
             </SliderWrapper>
+
           </div>
           <!-- <div class="modal__actions" data-jd-modal-actions>
             <button class="button" data-jd-modal-close>Close</button>
