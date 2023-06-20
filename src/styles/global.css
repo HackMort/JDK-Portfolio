@@ -19,6 +19,9 @@ a,
   margin-left: auto;
   max-width: 98%;
 }
+.modal-demo.modal-slider .jd-modal__content {
+  padding: 30px;
+}
 .showcase__grid {
   display: grid;
 
