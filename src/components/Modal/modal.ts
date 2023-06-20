@@ -65,6 +65,9 @@ function createModal(modalId: string, triggerSlideNum?: string) {
         initShowCaseCarousel(triggerSlideNum || '0');
         initSwiper();
       },
+      done: () => {
+        initShowCaseCarousel(triggerSlideNum || '0');
+      },
       close: () => {
         setTimeout(() => {
           removeHtmlModalFromDom(modalId);
