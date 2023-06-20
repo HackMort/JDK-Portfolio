@@ -61,8 +61,9 @@ function createModal(modalId: string, triggerSlideNum?: string) {
     hideScrollbar: true,
     defaultDisplay: "flex",
     on: {
-      done: () => {
+      ready: () => {
         initShowCaseCarousel(triggerSlideNum || '0');
+        initSwiper();
       },
       close: () => {
         setTimeout(() => {
@@ -160,7 +161,6 @@ function init(event: Event) {
   }
 
   addModalInstanceToGroup(modal);
-  initSwiper();
 }
 
 /**
@@ -185,12 +185,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Swiper JS
+/**
+ * This function initializes a Swiper carousel.
+ * @returns The function `initSwiper` is returning a new instance of the `Swiper` class with the
+ * provided configuration options.
+ * @see https://swiperjs.com/api/
+**/
 function initSwiper() {
   const swiper = new Swiper(".swiper-sites", {
     // Optional parameters
     direction: "horizontal",
-    loop: false,
+    loop: true,
 
     // Autoplay Configuration
     autoplay: {

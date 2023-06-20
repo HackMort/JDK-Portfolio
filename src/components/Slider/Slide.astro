@@ -4,8 +4,9 @@ type Props = {
   slides: any[];
 };
 const { className, slides } = Astro.props;
+
 ---
-<div class="item">
+<div class={className}>
     <div class="swiper swiper-sites">
         <div class="swiper-wrapper">
             {slides.map((slide, index) => (
@@ -16,11 +17,9 @@ const { className, slides } = Astro.props;
         </div>
     </div>
 </div>
-
 <style>
     .swiper {
         width: 100%;
-        height: 300px;
-        object-fit: contain;
+        height: auto;
     }
 </style>
