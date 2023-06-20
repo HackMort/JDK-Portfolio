@@ -43,3 +43,9 @@ a,
     /* overflow-y: hidden; */
   }
 }
+
+
+[data-theme="dark"] [data-jd-modal-close] svg {
+  fill: #f9fafb !important;
+}
+
