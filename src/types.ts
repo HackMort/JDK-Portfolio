@@ -27,4 +27,5 @@ export interface ShowcaseSite {
   images: Array<ImageMetadata>;
   description: string;
   url: string;
+  durationslides: number;
 }

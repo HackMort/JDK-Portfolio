@@ -24,7 +24,7 @@ const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
           widths={widths}
         />
       ) : (
-        <div class="showcase__swiper">
+        <div class="showcase__swiper" data-slide={site.durationslides}>
           <div class="swiper-wrapper">
             {site.images.map((image) => (
               <div class="swiper-slide">
@@ -58,20 +58,22 @@ const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
 </div>
 <script>
   import Swiper from "swiper/bundle";
-  const swiper = new Swiper(".showcase__swiper", {
-    autoplay: {
-      delay: 3000,
-    },
-    loop: true,
-    slidesPerView: 1,
-    // spaceBetween: 10,
-    // centeredSlides: true,
-    // navigation: {
-    //   nextEl: ".swiper-button-next",
-    //   prevEl: ".swiper-button-prev",
-    // },
-    // pagination: {
-    //   el: ".swiper-pagination",
-    // },
+
+  // Getting the duration of the slide
+  const sliders = document.querySelectorAll(".showcase__swiper");
+  const durationSlides = [];
+  sliders.forEach((slider) => {
+    durationSlides.push(slider.getAttribute("data-slide"));
+  });
+
+  // Initializing each slider
+  sliders.forEach((slider, index) => {
+    const swiper = new Swiper(slider, {
+      autoplay: {
+        delay: durationSlides[index],
+      },
+      loop: true,
+      slidesPerView: 1,
+    });
   });
 </script>
