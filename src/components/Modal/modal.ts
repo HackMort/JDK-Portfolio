@@ -6,6 +6,8 @@ import { Fancybox } from "@fancyapps/ui";
 import { Carousel } from "@fancyapps/ui/dist/carousel/carousel.esm.js";
 import { Autoplay } from "@fancyapps/ui/dist/carousel/carousel.autoplay.esm.js";
 
+import Swiper from "swiper";
+
 const TEMPLATE_PREFFIX = "jd-modal-template-";
 const MODAL_PREFFIX = "jd-modal-";
 
@@ -46,8 +48,8 @@ function removeHtmlModalFromDom(modalId: string) {
  * @returns The function `createModal` is returning a new instance of the `Fancybox` class with the
  * provided configuration options.
  */
-function createModal(modalId: string) {
-  return new Fancybox([{ src: modalId }], {
+function createModal(modalId: string, triggerSlideNum?: string) {
+  return new Fancybox([{ src: modalId,}], {
     id: modalId,
     autoFocus: false,
     defaultType: "inline",
@@ -59,8 +61,9 @@ function createModal(modalId: string) {
     hideScrollbar: true,
     defaultDisplay: "flex",
     on: {
-      done: () => {
-        initShowCaseCarousel();
+      ready: () => {
+        initShowCaseCarousel(triggerSlideNum || '0');
+        initSwiper();
       },
       close: () => {
         setTimeout(() => {
@@ -84,14 +87,15 @@ function createModal(modalId: string) {
  * provided configuration options.
  * @see https://fancyapps.com/docs/ui/carousel
  **/
-function initShowCaseCarousel() {
+function initShowCaseCarousel(initialSlide: string) {
   const container = document.getElementById("myCarousel");
   const options = {
     adaptiveHeight: true,
     infinite: true,
     Autoplay: {
-      timeout: 3000,
+      timeout: 8000,
     },
+    initialSlide: parseInt(initialSlide) - 1,
   };
   const mainCarousel = new Carousel(container, options, { Autoplay });
 }
@@ -127,9 +131,9 @@ function removeModalInstanceFromGroup(modalId: string) {
  */
 function init(event: Event) {
   const trigger = event.target as HTMLButtonElement;
+  const triggerSlideNum = trigger.getAttribute('data-slide') || '0';
   let modalId = trigger.dataset.jdModalTrigger;
   const modalTemplateId = "#" + TEMPLATE_PREFFIX + modalId;
-
   const modalTemplate: HTMLTemplateElement =
     document.querySelector(modalTemplateId);
 
@@ -140,7 +144,7 @@ function init(event: Event) {
   }
 
   modalId = MODAL_PREFFIX + modalId;
-  const modal = createModal(modalId);
+  const modal = createModal(modalId, triggerSlideNum);
 
   const closeButtons: HTMLButtonElement[] = Array.from(
     document
@@ -180,3 +184,23 @@ document.addEventListener("DOMContentLoaded", () => {
     trigger.addEventListener("click", init);
   });
 });
+
+/**
+ * This function initializes a Swiper carousel.
+ * @returns The function `initSwiper` is returning a new instance of the `Swiper` class with the
+ * provided configuration options.
+ * @see https://swiperjs.com/api/
+**/
+function initSwiper() {
+  const swiper = new Swiper(".swiper-sites", {
+    // Optional parameters
+    direction: "horizontal",
+    loop: true,
+
+    // Autoplay Configuration
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+  });
+}
