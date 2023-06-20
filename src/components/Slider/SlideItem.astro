@@ -2,8 +2,10 @@
 type Props = {
   className?: string;
   slideNumber: number;
+  site: any;
 };
-const { className, slideNumber } = Astro.props;
+const { className, slideNumber, site } = Astro.props;
+import Slide from "~/components/Slider/Slide.astro";
 ---
 
 <div
@@ -12,5 +14,22 @@ const { className, slideNumber } = Astro.props;
   }`}
   data-slide-number={slideNumber}
 >
-  <slot />
+  <div class="grid gap-4 md:grid-cols-2">
+    <div class="showcase__grid_item">
+      <Slide className="showcase__images" slides={site.images} />
+    </div>
+    <div class="showcase__grid_item flex flex-col">
+      <h4 class="font-bold uppercase">{site.title}</h4>
+      <p class="text-sm">
+        {site.description}
+      </p>
+      <a
+        href={site.url}
+        target="_blank"
+        class="w-32 flex-auto flex-grow-0 rounded-lg bg-indigo-600 p-3 text-center text-white transition duration-300 ease-in-out hover:bg-indigo-700 hover:text-white"
+      >
+        Visit Site
+      </a>
+    </div>
+  </div>
 </div>

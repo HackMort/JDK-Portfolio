@@ -1,0 +1,25 @@
+---
+type Props = {
+  className?: string;
+  slides: any[];
+};
+const { className, slides } = Astro.props;
+
+---
+<div class={className}>
+    <div class="swiper swiper-sites">
+        <div class="swiper-wrapper">
+            {slides.map((slide, index) => (
+                <div class="swiper-slide">
+                    <img src={slide.src} alt=" " />
+                </div>
+            ))}
+        </div>
+    </div>
+</div>
+<style>
+    .swiper {
+        width: 100%;
+        height: auto;
+    }
+</style>
