@@ -16,4 +16,6 @@
   --color-background: theme("colors.gray.900");
   --color-background-offset: theme("colors.gray.800");
   --color-border: theme("colors.gray.50" / 10%);
+  --fancybox-content-bg: #1F2937;
+  --fancybox-content-color: #f9fafb;
 }

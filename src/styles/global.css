@@ -19,6 +19,9 @@ a,
   margin-left: auto;
   max-width: 98%;
 }
+.modal-demo.modal-slider .jd-modal__content {
+  padding: 30px;
+}
 .showcase__grid {
   display: grid;
 
@@ -44,4 +47,21 @@ a,
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .modal-demo.modal-slider {
+    max-width: 1400px;
+  }
+}
 
+[data-theme="dark"] [data-jd-modal-close] svg {
+  fill: #f9fafb !important;
+}
+
+#contact picture {
+  margin: 0 auto;
+  max-width: 31.25rem;
+}
+
+#contact .grid {
+  margin-top: 0;
+}

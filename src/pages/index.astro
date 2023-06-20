@@ -82,8 +82,13 @@ const description =
     <Modal id="modal-slider" className="modal-demo modal-slider">
       <Fragment>
         <div class="modal">
-          <div data-jd-modal-header>
-            <h1 class="modal__title" data-jd-modal-title>Showcase</h1>
+          <div class="justify-center text-center" data-jd-modal-header>
+            <h1
+              class="modal__title gradient-text mb-4 text-center font-extrabold tracking-tight text-3xl"
+              data-jd-modal-title
+            >
+              Showcase
+            </h1>
             <button data-jd-modal-close>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -102,13 +107,10 @@ const description =
               {
                 sites.map((site) => {
                   const { id, title, images, description } = site;
-                  return (
-                     <SlideItem slideNumber={id} site={site}/>
-                  );
+                  return <SlideItem slideNumber={id} site={site} />;
                 })
               }
             </SliderWrapper>
-
           </div>
           <!-- <div class="modal__actions" data-jd-modal-actions>
             <button class="button" data-jd-modal-close>Close</button>
