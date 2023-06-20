@@ -131,6 +131,19 @@ import ContentSection from "~/components/content-section.astro";
     padding: 15px;
   }
 
+  .swiper-button-next, .swiper-button-prev {
+    top: 0 !important;
+    bottom: 0;
+    margin: auto !important;
+  }
+
+  @media screen and (min-width: 410px) {
+    .testimonial__item {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+
   @media screen and (min-width: 768px) {
     .testimonial__item {
       padding: 30px 60px;
