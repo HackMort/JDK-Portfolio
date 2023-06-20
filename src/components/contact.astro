@@ -1,38 +1,52 @@
 ---
+import { Picture } from "@astrojs/image/components";
 import { Icon } from "astro-icon";
 import ContentSection from "./content-section.astro";
+import contactImage from "~/assets/contact.svg";
+
+const widths = [450, 800];
+const sizes = "(min-width: 640px) 42vw, 67vw";
 ---
 
 <ContentSection title="Contact" id="contact">
-  <div class="mx-auto max-w-2xl">
-    <div class="mb-4 flex items-center">
-      <p>
-        Phone: <a href="tel:50325198170" class="text-blue-500"
-          >+(503) 2519-8170</a
-        >
-      </p>
-    </div>
-    <div class="mb-4 flex items-center">
-      <p>
-        Phone: <a href="tel:12143171065" class="text-blue-500"
-          >+1 (214) 317 1065</a
-        >
-      </p>
-    </div>
-    <div class="mb-4 flex items-center">
-      <p>
-        Email: <a href="mailto:info@jdoutstanding.com" class="text-blue-500"
-          >info@jdoutstanding.com</a
-        >
-      </p>
-    </div>
-    <div class="mb-4 flex items-center">
-      <p>
-        Get a quote <a
-          href="https://jdoutstanding.com/get-a-quote/"
-          class="text-blue-500">here!</a
-        >
-      </p>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 place-items-center">
+    <Picture
+      class="h-full w-full object-cover max-w-500px"
+      src={contactImage}
+      widths={widths}
+      sizes={sizes}
+      loading="eager"
+      alt=" " />
+    <div class="mx-auto max-w-2xl">
+      <div class="mb-4 flex items-center">
+        <p>
+          Phone: <a href="tel:50325198170" class="text-blue-500"
+            >+(503) 2519-8170</a
+          >
+        </p>
+      </div>
+      <div class="mb-4 flex items-center">
+        <p>
+          Phone: <a href="tel:12143171065" class="text-blue-500"
+            >+1 (214) 317 1065</a
+          >
+        </p>
+      </div>
+      <div class="mb-4 flex items-center">
+        <p>
+          Email: <a href="mailto:info@jdoutstanding.com" class="text-blue-500"
+            >info@jdoutstanding.com</a
+          >
+        </p>
+      </div>
+      <div class="mb-4 flex items-center">
+        <p>
+          Get a quote <a
+            href="https://jdoutstanding.com/get-a-quote/"
+            class="text-blue-500">here!</a
+          >
+        </p>
+      </div>
     </div>
   </div>
 
