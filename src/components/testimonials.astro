@@ -114,6 +114,8 @@ import ContentSection from "~/components/content-section.astro";
 </ContentSection>
 <style>
   .swiper {
+    --swiper-navigation-sides-offset: 0px;
+    --swiper-navigation-size: 35px;
     max-width: 800px;
     width: 100%;
     height: auto;
@@ -125,9 +127,10 @@ import ContentSection from "~/components/content-section.astro";
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: var(--color-text);
     padding: 15px;
   }
+
   @media screen and (min-width: 768px) {
     .testimonial__item {
       padding: 30px 60px;
