@@ -63,28 +63,37 @@ function createModal(modalId: string, triggerSlideNum?: string) {
     defaultDisplay: "flex",
     on: {
       ready: () => {
-        initShowCaseCarousel(triggerSlideNum || '0');
-        initSwiper();
-        const modalSlider = document.querySelector('#fancybox-jd-modal-modal-slider')
-        modalSlider.style.setProperty('visibility', 'hidden')
+        const modalContent = document.querySelector('#fancybox-jd-modal-modal-slider')
+        modalContent.style.setProperty('overflow-y', 'hidden')
+        const carouselModal = document.querySelector('#myCarousel')
+        carouselModal.style.setProperty('visibility', 'hidden')
       },
       done: () => {
-        mainCarousel.reInit()
+        initShowCaseCarousel(triggerSlideNum || '0');
+        initSwiper();
         setTimeout(() => {
-          const modalSlider = document.querySelector('#fancybox-jd-modal-modal-slider')
-          modalSlider.style.setProperty('visibility', 'visible')
-        }, 100)
+          const loadingSection = document.querySelector('.modal-loading')
+          loadingSection.classList.add('hidden')
+          const modalContent = document.querySelector('#fancybox-jd-modal-modal-slider')
+          modalContent.style.removeProperty('overflow-y')
+          const carouselModal = document.querySelector('#myCarousel')
+          carouselModal.style.setProperty('visibility', 'visible')
+        }, 500)
       },
       close: () => {
         setTimeout(() => {
           removeHtmlModalFromDom(modalId);
           removeModalInstanceFromGroup(modalId);
+          const loadingSection = document.querySelector('.modal-loading')
+          loadingSection.classList.remove('hidden')
         }, 100);
       },
       destroy: () => {
         setTimeout(() => {
           removeHtmlModalFromDom(modalId);
           removeModalInstanceFromGroup(modalId);
+          const loadingSection = document.querySelector('.modal-loading')
+          loadingSection.classList.remove('hidden')
         }, 100);
       },
     },
