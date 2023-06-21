@@ -17,6 +17,7 @@ import SliderWrapper from "~/components/Slider/SliderWrapper.astro";
 import SlideItem from "~/components/Slider/SlideItem.astro";
 import { getShowcase } from "~/data/showcase";
 import { Picture } from "@astrojs/image/components";
+import loadingImage from "~/assets/loading-icon.png";
 const sites = await getShowcase();
 
 const { generator, site } = Astro;
@@ -103,6 +104,14 @@ const description =
             </button>
           </div>
           <div class="modal__text" data-jd-modal-content>
+            <section class="modal-loading">
+              <Picture
+                src={loadingImage}
+                widths={[0]}
+                class='modal-loading__icon'
+              />
+              <span>Loading information...</span>
+            </section>
             <SliderWrapper id="myCarousel">
               {
                 sites.map((site) => {

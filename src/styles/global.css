@@ -65,3 +65,52 @@ a,
 #contact .grid {
   margin-top: 0;
 }
+
+#fancybox-jd-modal-modal-slider .modal__text {
+  position: relative;
+}
+
+.modal-loading {
+  background-color: var(--fancybox-content-bg);
+  color: var(--fancybox-content-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  padding-top: .625rem;
+  padding-bottom: .625rem;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+  .modal-loading {
+    bottom: 0;
+    margin: auto;
+  }
+}
+
+.modal-loading.hidden {
+  visibility: hidden;
+}
+
+.modal-loading picture {
+  display: inline-block;
+}
+
+.modal-loading__icon {
+  animation: loading 2s linear infinite;
+  width:  100px;
+  margin-right: .625rem;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
