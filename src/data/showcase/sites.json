@@ -11,7 +11,7 @@
     ],
     "url": "https://strensiq.com/",
     "description": "STRENSIQ® (asfotase alfa) is used to treat perinatal/infantile- and juvenile-onset hypophosphatasia (HPP).",
-    "durationslides": 500
+    "durationslides": 5000
   },
   {
     "id": 2,
@@ -95,7 +95,7 @@
     ],
     "url": "https://nmosd.com/hcp",
     "description": "Learn more about neuromyelitis optica spectrum disorder, the importance of AQP4-IgG antibodies, relapses, terminal complement pathway, and the burden your patients may face.",
-    "durationslides": 1000
+    "durationslides": 5000
   },
   {
     "id": 8,
@@ -122,7 +122,7 @@
     ],
     "url": "https://nf1andpninfo.com/",
     "description": "Learn more about NF1 with PNs (neurofibromatosis type 1 with plexiform neurofibromas).",
-    "durationslides": 2000
+    "durationslides": 5000
   },
   {
     "id": 10,
