@@ -50,6 +50,35 @@ function removeHtmlModalFromDom(modalId: string) {
  * provided configuration options.
  */
 function createModal(modalId: string, triggerSlideNum?: string) {
+  function onReadyModal () {
+    initShowCaseCarousel(triggerSlideNum || '0')
+    initSwiper()
+    hideModalContent()
+  }
+
+  function onDoneModal () {
+    mainCarousel.reInit()
+
+    setTimeout(() => {
+      showModalContent()
+      hideLoading()
+    }, 500)
+  }
+
+  function onCloseModal () {
+    setTimeout(() => {
+      removeHtmlModalFromDom(modalId)
+      removeModalInstanceFromGroup(modalId)
+    }, 100);
+  }
+
+  function onDestroyModal () {
+    setTimeout(() => {
+      removeHtmlModalFromDom(modalId)
+      removeModalInstanceFromGroup(modalId)
+    }, 100);
+  }
+
   return new Fancybox([{ src: modalId,}], {
     id: modalId,
     autoFocus: false,
@@ -62,41 +91,10 @@ function createModal(modalId: string, triggerSlideNum?: string) {
     hideScrollbar: true,
     defaultDisplay: "flex",
     on: {
-      ready: () => {
-        initShowCaseCarousel(triggerSlideNum || '0');
-        initSwiper();
-        const modalContent = document.querySelector('#fancybox-jd-modal-modal-slider')
-        modalContent.style.setProperty('overflow-y', 'hidden')
-        const carouselModal = document.querySelector('#myCarousel')
-        carouselModal.style.setProperty('visibility', 'hidden')
-      },
-      done: () => {
-        mainCarousel.reInit()
-        setTimeout(() => {
-          const loadingSection = document.querySelector('.modal-loading')
-          loadingSection.classList.add('hidden')
-          const modalContent = document.querySelector('#fancybox-jd-modal-modal-slider')
-          modalContent.style.removeProperty('overflow-y')
-          const carouselModal = document.querySelector('#myCarousel')
-          carouselModal.style.setProperty('visibility', 'visible')
-        }, 500)
-      },
-      close: () => {
-        setTimeout(() => {
-          removeHtmlModalFromDom(modalId);
-          removeModalInstanceFromGroup(modalId);
-          const loadingSection = document.querySelector('.modal-loading')
-          loadingSection.classList.remove('hidden')
-        }, 100);
-      },
-      destroy: () => {
-        setTimeout(() => {
-          removeHtmlModalFromDom(modalId);
-          removeModalInstanceFromGroup(modalId);
-          const loadingSection = document.querySelector('.modal-loading')
-          loadingSection.classList.remove('hidden')
-        }, 100);
-      },
+      ready: onReadyModal,
+      done: onDoneModal,
+      close: onCloseModal,
+      destroy: onDestroyModal,
     },
   });
 }
@@ -223,4 +221,32 @@ function initSwiper() {
       disableOnInteraction: false,
     },
   });
+}
+
+function hideModalContent () {
+  const modalHeader = document.querySelector('[data-jd-modal-header]')
+  const carouselModal = document.querySelector('#myCarousel')
+  if ( carouselModal && modalHeader) {
+    modalHeader.style.setProperty('visibility', 'hidden')
+    carouselModal.style.setProperty('visibility', 'hidden')
+    carouselModal.style.setProperty('height', '0px')
+
+  }
+}
+
+function showModalContent () {
+  const modalHeader = document.querySelector('[data-jd-modal-header]')
+  const carouselModal = document.querySelector('#myCarousel')
+  if (carouselModal && modalHeader) {
+    modalHeader.style.setProperty('visibility', 'visible')
+    carouselModal.style.setProperty('visibility', 'visible')
+    carouselModal.style.removeProperty('height')
+  }
+}
+
+function hideLoading () {
+  const loadingSection = document.querySelector('.modal-loading')
+  if (loadingSection) {
+    loadingSection.classList.add('hidden')
+  }
 }
