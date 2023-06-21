@@ -100,6 +100,11 @@ function initShowCaseCarousel(initialSlide: string) {
       timeout: 5000,
     },
     initialSlide: parseInt(initialSlide) - 1,
+    breakpoints: {
+      "(max-width: 768px)": {
+        Navigation: false,
+      }
+    },
   };
   const mainCarousel = new Carousel(container, options, { Autoplay });
 }
