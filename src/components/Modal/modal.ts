@@ -10,6 +10,7 @@ import Swiper from "swiper";
 
 const TEMPLATE_PREFFIX = "jd-modal-template-";
 const MODAL_PREFFIX = "jd-modal-";
+let mainCarousel
 
 let openModalTriggers: HTMLElement[] = [];
 
@@ -64,6 +65,15 @@ function createModal(modalId: string, triggerSlideNum?: string) {
       ready: () => {
         initShowCaseCarousel(triggerSlideNum || '0');
         initSwiper();
+        const modalSlider = document.querySelector('#fancybox-jd-modal-modal-slider')
+        modalSlider.style.setProperty('visibility', 'hidden')
+      },
+      done: () => {
+        mainCarousel.reInit()
+        setTimeout(() => {
+          const modalSlider = document.querySelector('#fancybox-jd-modal-modal-slider')
+          modalSlider.style.setProperty('visibility', 'visible')
+        }, 100)
       },
       close: () => {
         setTimeout(() => {
@@ -97,7 +107,7 @@ function initShowCaseCarousel(initialSlide: string) {
     },
     initialSlide: parseInt(initialSlide) - 1,
   };
-  const mainCarousel = new Carousel(container, options, { Autoplay });
+  mainCarousel = new Carousel(container, options, { Autoplay });
 }
 
 /**
