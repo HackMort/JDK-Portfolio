@@ -65,3 +65,8 @@ a,
 #contact .grid {
   margin-top: 0;
 }
+
+.jd-modal__loading svg path,
+.jd-modal__loading svg rect{
+  fill: #fff;
+}
