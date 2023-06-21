@@ -14,21 +14,22 @@ import Slide from "~/components/Slider/Slide.astro";
   }`}
   data-slide-number={slideNumber}
 >
-  <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+  <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
     <div class="showcase__grid_item">
       <Slide className="showcase__images" slides={site.images} />
     </div>
     <div class="showcase__grid_item flex flex-col">
-      <h4 class="gradient-text mb-4 font-bold uppercase">{site.title}</h4>
+      <h4 class="text-xl gradient-text mb-4 font-bold uppercase">{site.title}</h4>
       <p class="mb-4 text-sm">
         {site.description}
       </p>
       <a
         href={site.url}
         target="_blank"
-        class="w-32 flex-auto flex-grow-0 rounded-lg bg-indigo-600 p-3 text-center text-white transition duration-300 ease-in-out hover:bg-indigo-700 hover:text-white"
+        class="w-fit flex flex-row flex-grow-0 gap-2 rounded-sm bg-indigo-600 p-3 text-center text-white transition duration-300 ease-in-out hover:bg-indigo-700 hover:text-white mr-14"
       >
         Visit Site
+        <svg class="m-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: ;msFilter:;"><path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path></svg>
       </a>
     </div>
   </div>
