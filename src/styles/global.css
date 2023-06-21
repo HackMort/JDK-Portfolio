@@ -19,9 +19,9 @@ a,
   margin-left: auto;
   max-width: 98%;
 }
-.modal-demo.modal-slider .jd-modal__content {
+/* .modal-demo.modal-slider .jd-modal__content {
   padding: 30px;
-}
+} */
 .showcase__grid {
   display: grid;
 
@@ -66,7 +66,7 @@ a,
   margin-top: 0;
 }
 
-#fancybox-jd-modal-modal-slider .modal__text {
+#fancybox-jd-modal-modal-slider .modal-demo.modal-slider {
   position: relative;
 }
 
@@ -77,8 +77,7 @@ a,
   justify-content: center;
   align-items: center;
   position: absolute;
-  padding-top: .625rem;
-  padding-bottom: .625rem;
+  left: 0;
   z-index: 2;
   top: 0;
   width: 100%;
