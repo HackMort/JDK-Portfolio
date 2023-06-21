@@ -61,12 +61,13 @@ function createModal(modalId: string, triggerSlideNum?: string) {
     hideScrollbar: true,
     defaultDisplay: "flex",
     on: {
-      ready: () => {
-        initShowCaseCarousel(triggerSlideNum || '0');
+      init: () => {
         initSwiper();
+        setLoading(true)
       },
       done: () => {
         initShowCaseCarousel(triggerSlideNum || '0');
+        setLoading(false)
       },
       close: () => {
         setTimeout(() => {
@@ -81,7 +82,7 @@ function createModal(modalId: string, triggerSlideNum?: string) {
         }, 100);
       },
     },
-  });
+  }); 
 }
 
 /**
@@ -96,12 +97,13 @@ function initShowCaseCarousel(initialSlide: string) {
     adaptiveHeight: true,
     infinite: true,
     Autoplay: {
-      timeout: 8000,
+      timeout: 5000,
     },
     initialSlide: parseInt(initialSlide) - 1,
   };
   const mainCarousel = new Carousel(container, options, { Autoplay });
 }
+
 
 /**
  * This function adds a Fancybox instance to a group of modals.
@@ -206,4 +208,20 @@ function initSwiper() {
       disableOnInteraction: false,
     },
   });
+}
+
+function setLoading(flag: boolean) {
+  const swiper = document.querySelector('.jd-modal__wrapper') as HTMLElement;
+  const loading = document.querySelector('.jd-modal__loading') as HTMLElement;
+  console.log(swiper);
+
+  if (swiper) {
+    if (flag) {
+      swiper.style.display = 'none';
+      loading.style.display = 'flex';
+    } else {
+      swiper.style.display = 'flex';
+      loading.style.display = 'none';
+    }
+  }
 }

@@ -1,5 +1,6 @@
 ---
 import "./modal.scss";
+import ModalLoad from "./ModalLoad.astro";
 type Props = {
   id: string;
   className?: string;
@@ -19,6 +20,11 @@ const { id, className = "" } = Astro.props;
         <slot />
       </div>
     </div>
+
+    <div class="jd-modal__loading" style="display: none">
+      <ModalLoad />
+    </div>
+
   </section>
 </template>
 <script src="./modal.ts"></script>
