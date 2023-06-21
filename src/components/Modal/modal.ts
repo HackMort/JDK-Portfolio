@@ -63,14 +63,15 @@ function createModal(modalId: string, triggerSlideNum?: string) {
     defaultDisplay: "flex",
     on: {
       ready: () => {
+        initShowCaseCarousel(triggerSlideNum || '0');
+        initSwiper();
         const modalContent = document.querySelector('#fancybox-jd-modal-modal-slider')
         modalContent.style.setProperty('overflow-y', 'hidden')
         const carouselModal = document.querySelector('#myCarousel')
         carouselModal.style.setProperty('visibility', 'hidden')
       },
       done: () => {
-        initShowCaseCarousel(triggerSlideNum || '0');
-        initSwiper();
+        mainCarousel.reInit()
         setTimeout(() => {
           const loadingSection = document.querySelector('.modal-loading')
           loadingSection.classList.add('hidden')
