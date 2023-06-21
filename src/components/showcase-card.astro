@@ -69,6 +69,7 @@ const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
   // Initializing each slider
   sliders.forEach((slider, index) => {
     const swiper = new Swiper(slider, {
+      effect: "fade",
       autoplay: {
         delay: durationSlides[index],
       },

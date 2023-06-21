@@ -201,6 +201,7 @@ function initSwiper() {
     // Optional parameters
     direction: "horizontal",
     loop: true,
+    effect: "fade",
 
     // Autoplay Configuration
     autoplay: {
