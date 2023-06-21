@@ -82,7 +82,7 @@ function createModal(modalId: string, triggerSlideNum?: string) {
         }, 100);
       },
     },
-  }); 
+  });
 }
 
 /**
@@ -101,7 +101,7 @@ function initShowCaseCarousel(initialSlide: string) {
     },
     initialSlide: parseInt(initialSlide) - 1,
     breakpoints: {
-      "(max-width: 768px)": {
+      "(max-width: 767px)": {
         Navigation: false,
       }
     },
