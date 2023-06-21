@@ -213,7 +213,6 @@ function initSwiper() {
 function setLoading(flag: boolean) {
   const swiper = document.querySelector('.jd-modal__wrapper') as HTMLElement;
   const loading = document.querySelector('.jd-modal__loading') as HTMLElement;
-  console.log(swiper);
 
   if (swiper) {
     if (flag) {
