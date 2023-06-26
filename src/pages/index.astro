@@ -17,12 +17,13 @@ import SliderWrapper from "~/components/Slider/SliderWrapper.astro";
 import SlideItem from "~/components/Slider/SlideItem.astro";
 import { getShowcase } from "~/data/showcase";
 import { Picture } from "@astrojs/image/components";
-import { SEO } from 'astro-seo'
+import { SEO } from "astro-seo";
 const sites = await getShowcase();
 
 const { generator, site } = Astro;
-const image = `${site}jdk-logo-alt.png`
-const description = "JDK Outstanding Technologies is an IT company that provides innovative solutions for content management using Sitecore, web development, web design, web migration, and more. We help global brands, mid-size businesses, and startups create engaging and impactful digital experiences.";
+const image = `${site}jdk-logo.png`;
+const description =
+  "JDK Outstanding Technologies is an IT company that provides innovative solutions for content management using Sitecore, web development, web design, web migration, and more. We help global brands, mid-size businesses, and startups create engaging and impactful digital experiences.";
 ---
 
 <!DOCTYPE html>
@@ -34,35 +35,37 @@ const description = "JDK Outstanding Technologies is an IT company that provides
       charset="UTF-8"
       extend={{
         meta: [
-          { name: 'viewport', content: 'width=device-width' },
+          { name: "viewport", content: "width=device-width" },
           { name: generator, content: generator },
-          { name: 'keywords', content: 'JDK Outstanding Technologies, Sitecore, Web development, Web design, Enterprise web development, Content management system, Web solutions, Responsive websites, Web Accesibility, Web migration'  }
+          {
+            name: "keywords",
+            content:
+              "JDK Outstanding Technologies, Sitecore, Web development, Web design, Enterprise web development, Content management system, Web solutions, Responsive websites, Web Accesibility, Web migration",
+          },
         ],
-        link: [
-          { rel: 'icon', href: '/favicon.png' }
-        ]
+        link: [{ rel: "icon", href: "/favicon.png" }],
       }}
       openGraph={{
         basic: {
-          title: 'JDK Showcase',
-          type: 'website',
+          title: "JDK Showcase",
+          type: "website",
           image: image,
-          url: `${site}`
+          url: `${site}`,
         },
         optional: {
-          description: description
+          description: description,
         },
         image: {
-          alt: 'Company logo',
-          height: 1500
-        }
+          alt: "JDK Company logo",
+          height: 1500,
+        },
       }}
       twitter={{
-        title: 'JDK Showcase',
+        title: "JDK Showcase",
         image: image,
-        imageAlt: 'Company logo',
-        card: 'summary_large_image',
-        description: description
+        imageAlt: "JDK Company logo",
+        card: "summary_large_image",
+        description: description,
       }}
     />
 
