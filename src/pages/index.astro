@@ -17,32 +17,57 @@ import SliderWrapper from "~/components/Slider/SliderWrapper.astro";
 import SlideItem from "~/components/Slider/SlideItem.astro";
 import { getShowcase } from "~/data/showcase";
 import { Picture } from "@astrojs/image/components";
+import { SEO } from "astro-seo";
 const sites = await getShowcase();
 
 const { generator, site } = Astro;
-const image = new URL("jdk-logo-alt.png", site);
+const image = `${site}jdk-logo.png`;
 const description =
-  "Check out our company portfolio and see what we can do for you!";
+  "JDK Outstanding Technologies is an IT company that provides innovative solutions for content management using Sitecore, web development, web design, web migration, and more. We help global brands, mid-size businesses, and startups create engaging and impactful digital experiences.";
 ---
 
 <!DOCTYPE html>
 <html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="/favicon.png" />
-    <meta name="generator" content={generator} />
-
-    <title>JDK Dev Showcase</title>
-    <meta name="description" content={description} />
-
-    <!-- social media -->
-    <meta property="og:title" content="JDK Showcase" />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <meta property="og:url" content={site} />
-    <meta name="twitter:card" content="summary_large_image" />
+    <SEO
+      title="JDK Dev Showcase"
+      description={description}
+      charset="UTF-8"
+      extend={{
+        meta: [
+          { name: "viewport", content: "width=device-width" },
+          { name: generator, content: generator },
+          {
+            name: "keywords",
+            content:
+              "JDK Outstanding Technologies, Sitecore, Web development, Web design, Enterprise web development, Content management system, Web solutions, Responsive websites, Web Accesibility, Web migration",
+          },
+        ],
+        link: [{ rel: "icon", href: "/favicon.png" }],
+      }}
+      openGraph={{
+        basic: {
+          title: "JDK Showcase",
+          type: "website",
+          image: image,
+          url: `${site}`,
+        },
+        optional: {
+          description: description,
+        },
+        image: {
+          alt: "JDK Company logo",
+          height: 1500,
+        },
+      }}
+      twitter={{
+        title: "JDK Showcase",
+        image: image,
+        imageAlt: "JDK Company logo",
+        card: "summary_large_image",
+        description: description,
+      }}
+    />
 
     <!-- initialize theme -->
     <script is:inline>
